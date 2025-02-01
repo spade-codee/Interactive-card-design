@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="card.css">
+</head>
+<body>
+  <main class="container">
+    <!-- Left side - Card Preview -->
+    <div class="card-preview">
+      <div class="card-front">
+        <div class="card-logo">
+          <div class="circle-large"></div>
+          <div class="circle-small"></div>
+        </div>
+        <p class="card-number" id="cardNumberPreview">0000 0000 0000 0000</p>
+        <div class="card-info">
+          <p class="card-name" id="cardNamePreview">Jane Appleseed</p>
+          <p class="card-expiry">
+            <span id="monthPreview">00</span>/<span id="yearPreview">00</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card-back">
+        <p class="card-cvc" id="cvcPreview">000</p>
+      </div>
+    </div>
+
+    <!-- Right side - Form -->
+    <div class="form-container">
+      <!-- Initial Form State -->
+      <form id="cardForm" class="card-form">
+        <div class="form-group">
+          <label for="cardholderName">Cardholder Name</label>
+          <input 
+            type="text" 
+            id="cardholderName" 
+            placeholder="e.g. Jane Appleseed"
+            required
+          >
+          <div class="error-message" data-error="name"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input 
+            type="text" 
+            id="cardNumber" 
+            placeholder="e.g. 1234 5678 9123 0000"
+            maxlength="19"
+            required
+          >
+          <div class="error-message" data-error="number"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group expiry">
+            <label for="expiryMonth">Exp. Date (MM/YY)</label>
+            <div class="expiry-inputs">
+              <input 
+                type="text" 
+                id="expiryMonth" 
+                placeholder="MM" 
+                maxlength="2"
+                required
+              >
+              <input 
+                type="text" 
+                id="expiryYear" 
+                placeholder="YY" 
+                maxlength="2"
+                required
+              >
+            </div>
+            <div class="error-message" data-error="expiry"></div>
+          </div>
+
+          <div class="form-group cvc">
+            <label for="cvc">CVC</label>
+            <input 
+              type="text" 
+              id="cvc" 
+              placeholder="e.g. 123" 
+              maxlength="3"
+              required
+            >
+            <div class="error-message" data-error="cvc"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-button">Confirm</button>
+      </form>
+
+      <!-- Success State (hidden by default) -->
+      <div class="success-state hidden" id="successState">
+        <div class="success-icon"></div>
+        <h2>Thank you!</h2>
+        <p>We've added your card details</p>
+        <button type="button" class="continue-button">Continue</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Michael</a>.
+  </footer>
+
+  <script src="card.js"></script>
+</body>
+</html>
